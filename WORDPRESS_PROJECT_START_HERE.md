@@ -29,7 +29,9 @@ phpMyAdmin new DB:    http://localhost:8082
 Run this in PowerShell:
 
 ```powershell
-cd "C:\Users\webdev\Documents\Codex\2026-05-05\the-opportunity-working-in-customer-service"
+git clone https://github.com/kate666kate/greenline-wordpress-delivery-project.git
+cd greenline-wordpress-delivery-project
+Copy-Item .env.example .env
 docker compose up -d
 ```
 

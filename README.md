@@ -30,7 +30,9 @@ phpMyAdmin new DB:    http://localhost:8082
 ## Run Locally
 
 ```powershell
-cp .env.example .env
+git clone https://github.com/kate666kate/greenline-wordpress-delivery-project.git
+cd greenline-wordpress-delivery-project
+Copy-Item .env.example .env
 docker compose up -d
 ```
 
