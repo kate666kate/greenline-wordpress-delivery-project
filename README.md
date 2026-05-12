@@ -11,7 +11,17 @@ Local WordPress portfolio project demonstrating practical website delivery skill
 - Contact form and SMTP testing with Mailpit
 - SEO checks, image alt text, and performance awareness
 - Backup and troubleshooting practice
-- A small custom WordPress plugin for project styling and REST-accessible SEO meta fields
+- A custom WordPress toolkit plugin with settings, shortcodes, a portfolio custom post type, REST API output, and WooCommerce awareness
+
+## Latest Plugin Upgrade
+
+The original styling plugin has been upgraded into `Greenline Site Toolkit`.
+
+Step-by-step improvements are documented in:
+
+```text
+RELEASE_NOTES.md
+```
 
 ## Local Demo URLs
 
@@ -47,7 +57,7 @@ http://localhost:8090/case-study/
 - `docker-compose.yml`: WordPress, MySQL, phpMyAdmin, Mailpit, and Nginx DNS simulator services.
 - `nginx.conf`: simulated DNS cutover between old and migrated WordPress sites.
 - `uploads.ini`: PHP upload and memory limits used during migration practice.
-- `greenline-site-style/`: custom WordPress plugin and styling used by the project.
+- `greenline-site-style/`: custom WordPress toolkit plugin and styling used by the project.
 - `wordpress-website-developer-portfolio/`: interview notes, workflow checklists, demo script, and skill files.
 - `wordpress-website-developer-portfolio/walkthrough-frames/`: visual project walkthrough frames.
 

@@ -7,6 +7,89 @@
   --gl-paper: #fbfcf8;
 }
 
+.greenline-toolkit-cta {
+  max-width: 1080px;
+  margin: 42px auto;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+  background: linear-gradient(135deg, #18342f, #2f7d5c);
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(24, 52, 47, 0.18);
+}
+
+.greenline-toolkit-cta h2 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.greenline-toolkit-cta p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.greenline-toolkit-eyebrow {
+  margin-bottom: 8px !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.greenline-toolkit-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px 18px;
+  color: var(--gl-ink);
+  background: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.greenline-toolkit-hours {
+  max-width: 520px;
+  margin: 32px auto;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid rgba(47, 125, 92, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(24, 52, 47, 0.08);
+}
+
+.greenline-toolkit-hours h3 {
+  margin-top: 0;
+}
+
+.greenline-toolkit-hours ul {
+  margin: 0 0 16px;
+  padding-left: 18px;
+}
+
+.greenline-toolkit-woo-status {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 125, 92, 0.18);
+  background: #fff;
+}
+
+.greenline-toolkit-woo-status.is-active {
+  border-color: rgba(47, 125, 92, 0.35);
+  background: #eef6ef;
+}
+
+.greenline-toolkit-woo-status.is-inactive {
+  border-color: rgba(201, 111, 74, 0.35);
+  background: #fff6f1;
+}
+
 .case-study-hero {
   max-width: none !important;
   margin-top: 0;

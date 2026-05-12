@@ -33,7 +33,7 @@ Local environment:
 - Reviewed cPanel-style DNS, SSL, SPF, DKIM, DMARC, and mailbox concepts.
 - Added SEO titles, meta descriptions, focus keywords, sitemap, robots checks, and H1 fixes.
 - Added image alt text, lazy loading, width/height attributes, and checked image sizes.
-- Created a small custom WordPress plugin to load site CSS.
+- Created a custom WordPress toolkit plugin with an admin settings page, CTA and business hours shortcodes, a portfolio custom post type, a REST API endpoint, and a WooCommerce active check.
 - Practised admin password recovery via API and phpMyAdmin.
 - Practised backup, plugin conflict troubleshooting, database connection error logic, PHP settings, and error log reasoning.
 
@@ -42,7 +42,7 @@ Local environment:
 - `docker-compose.yml`: local WordPress, databases, phpMyAdmin, Mailpit, and DNS simulator services.
 - `uploads.ini`: PHP upload and memory settings for migration/import practice.
 - `nginx.conf`: DNS cutover simulator configuration.
-- `greenline-site-style/`: custom WordPress plugin for loading project CSS.
+- `greenline-site-style/`: custom WordPress toolkit plugin for styling, shortcodes, portfolio content, REST output, and WooCommerce awareness.
 - `portfolio-images/`: practice portfolio images used for image SEO and performance.
 
 ## Interview Positioning
