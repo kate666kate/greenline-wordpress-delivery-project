@@ -1,0 +1,33 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Codex/local workspace metadata
+.codex/
+
+# Generated outputs and private application material
+output/
+*.pdf
+website-developer-resume-draft.md
+website-developer-resume-one-page.md
+install-wordpress-site-ops-skill.ps1
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# WordPress/database exports should not be committed
+*.sql
+*.wpress
+*.zip
+*.tar
+*.gz
+
+# Node/Python caches if generated later
+node_modules/
+__pycache__/
+.venv/
+venv/
