@@ -1,23 +1,23 @@
-# GA4 And Google Tag Manager Setup Notes
+# GA4 (Google Analytics 4) And GTM (Google Tag Manager) Setup Notes
 
-This document explains how GA4 and Google Tag Manager can be prepared for a WordPress website project.
+This document explains how GA4 (Google Analytics 4) and GTM (Google Tag Manager) can be prepared for a WordPress website project.
 
 It is written as an implementation checklist for a small business website, not as a replacement for the official Google documentation.
 
-## Why GA4 And GTM Matter
+## Why GA4 (Google Analytics 4) And GTM (Google Tag Manager) Matter
 
-GA4 helps the client understand website activity:
+GA4 (Google Analytics 4) helps the client understand website activity:
 
 - How many people visit the site
 - Which pages they view
 - Where visitors come from
 - Whether users submit forms or interact with key calls to action
 
-Google Tag Manager helps manage tracking scripts without editing theme files every time.
+GTM (Google Tag Manager) helps manage tracking scripts without editing theme files every time.
 
 ## Recommended Setup
 
-### 1. Create Or Confirm GA4 Property
+### 1. Create Or Confirm GA4 (Google Analytics 4) Property
 
 In Google Analytics:
 
@@ -31,7 +31,7 @@ Example:
 G-XXXXXXXXXX
 ```
 
-### 2. Create Or Confirm GTM Container
+### 2. Create Or Confirm GTM (Google Tag Manager) Container
 
 In Google Tag Manager:
 
@@ -45,7 +45,7 @@ Example:
 GTM-XXXXXXX
 ```
 
-### 3. Add GTM To WordPress
+### 3. Add GTM (Google Tag Manager) To WordPress
 
 Common options:
 
@@ -55,7 +55,7 @@ Common options:
 
 For client sites, a plugin is often safer and easier to maintain.
 
-### 4. Configure GA4 Through GTM
+### 4. Configure GA4 (Google Analytics 4) Through GTM (Google Tag Manager)
 
 In GTM:
 
@@ -71,7 +71,7 @@ For a small business WordPress site:
 
 - Page views
 - Contact form submission
-- CTA button click
+- CTA (Call To Action) button click
 - Phone link click
 - Email link click
 - Portfolio project view
@@ -96,7 +96,7 @@ Example JavaScript event:
 wpcf7mailsent
 ```
 
-In GTM, this can be tracked by:
+In GTM (Google Tag Manager), this can be tracked by:
 
 1. Listening for the successful form submit event.
 2. Pushing a custom event to the data layer.
@@ -125,9 +125,9 @@ contact_form_submit
 
 Before launch:
 
-- GTM container is installed on all pages.
-- GA4 receives page views.
-- GTM Preview mode works.
+- GTM (Google Tag Manager) container is installed on all pages.
+- GA4 (Google Analytics 4) receives page views.
+- GTM (Google Tag Manager) Preview mode works.
 - Contact form submit event fires only after successful submission.
 - CTA click tracking works.
 - Phone and email click events work if configured.
@@ -144,7 +144,7 @@ For real client work:
 - Confirm whether a cookie notice or consent banner is required.
 - Confirm what data is collected.
 - Avoid sending sensitive form content to GA4.
-- Do not track personally identifiable information such as names, emails, or phone numbers as GA event parameters.
+- Do not track personally identifiable information such as names, emails, or phone numbers as GA4 event parameters.
 
 ## Interview Talking Point
 
@@ -152,6 +152,13 @@ For real client work:
 I prepared a GA4 and Google Tag Manager setup checklist for the WordPress project, including pageview tracking, contact form submit tracking, CTA clicks, WooCommerce event awareness, testing steps and privacy considerations.
 ```
 
+## Glossary
+
+- GA4: Google Analytics 4.
+- GTM: Google Tag Manager.
+- CTA: Call To Action.
+- dataLayer: a JavaScript array used by Google Tag Manager to receive structured website events.
+
 ## Simple Explanation
 
-GA4 tells the client what users are doing on the website. GTM is the tool that helps manage the tracking setup in a cleaner way, without hardcoding every tracking script directly into the theme.
+GA4 (Google Analytics 4) tells the client what users are doing on the website. GTM (Google Tag Manager) is the tool that helps manage the tracking setup in a cleaner way, without hardcoding every tracking script directly into the theme.

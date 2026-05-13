@@ -62,6 +62,7 @@ http://localhost:8090/case-study/
 - `wordpress-website-developer-portfolio/walkthrough-frames/`: visual project walkthrough frames.
 - `CLIENT_TRAINING_GUIDE.md`: client-facing guide for updating toolkit settings, portfolio projects, and shortcodes.
 - `GA_GTM_SETUP_NOTES.md`: GA4 and Google Tag Manager setup notes for tracking, form events, WooCommerce awareness, testing, and privacy.
+- `ga-gtm-tracking-demo.html`: local visual demo showing how website actions can push events to a simulated GTM `dataLayer`.
 
 ## Interview Positioning
 

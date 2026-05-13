@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA4 + GTM Tracking Demo</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #617084;
+      --blue: #1f6feb;
+      --navy: #102a43;
+      --green: #1f7a4d;
+      --paper: #f7fbff;
+      --line: #d7e1ed;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(31, 111, 235, .16), transparent 34rem),
+        linear-gradient(135deg, #f8fbff, #fffaf0);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 36px 28px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), #174ea6);
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(32px, 5vw, 58px);
+      letter-spacing: -.05em;
+    }
+
+    header p {
+      margin: 0;
+      max-width: 880px;
+      color: #dbeaff;
+      line-height: 1.65;
+      font-size: 17px;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, .92);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 18px 50px rgba(23, 32, 51, .08);
+      padding: 22px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 24px;
+      letter-spacing: -.03em;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 18px;
+    }
+
+    .site-preview {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 30px;
+      background: linear-gradient(135deg, #eef6ef, #fff);
+    }
+
+    .hero h3 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 1.1;
+      color: var(--navy);
+    }
+
+    button,
+    .link-button {
+      display: inline-flex;
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 6px 8px 6px 0;
+      font: inherit;
+    }
+
+    .link-button.secondary,
+    button.secondary {
+      background: #eef4fb;
+      color: var(--navy);
+      border: 1px solid var(--line);
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    label {
+      display: grid;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 11px 12px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    textarea { min-height: 82px; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .flow div {
+      padding: 14px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      text-align: center;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .event-log {
+      min-height: 430px;
+      max-height: 620px;
+      overflow: auto;
+      padding: 14px;
+      border-radius: 14px;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+
+    .event {
+      padding: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    code {
+      background: #eef4fb;
+      border: 1px solid #d7e1ed;
+      border-radius: 7px;
+      padding: 2px 5px;
+      color: #174ea6;
+    }
+
+    .explain {
+      grid-column: 1 / -1;
+    }
+
+    ul {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GA4 + GTM Tracking Demo</h1>
+    <p>This is a safe local simulation. It does not send data to Google. It shows how website actions become tracking events that GTM could send to GA4.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Website Simulation</h2>
+      <p class="muted">Click the buttons and submit the form. Each action pushes an event into <code>dataLayer</code>, similar to how GTM (Google Tag Manager) listens for website interactions.</p>
+
+      <div class="site-preview">
+        <div class="site-nav">
+          <span>Greenline Studio</span>
+          <span>Home · Services · Contact</span>
+        </div>
+        <div class="hero">
+          <h3>Office plant styling for calm, productive workspaces.</h3>
+          <p class="muted">This section simulates a normal website page with CTA, phone, email, and contact form actions.</p>
+
+          <button id="ctaButton" type="button">Request a Consultation</button>
+          <a id="phoneLink" class="link-button secondary" href="tel:0390000000">Call the studio</a>
+          <a id="emailLink" class="link-button secondary" href="mailto:hello@greenlinestudio.example">Email us</a>
+
+          <form id="demoForm">
+            <label>
+              Name
+              <input name="name" value="Demo Visitor">
+            </label>
+            <label>
+              Email
+              <input name="email" value="visitor@example.com">
+            </label>
+            <label>
+              Message
+              <textarea name="message">I would like a plant styling quote.</textarea>
+            </label>
+            <button type="submit">Submit enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>Event Log</h2>
+      <p class="muted">This is the simulated <code>dataLayer</code>. In a real site, GTM (Google Tag Manager) reads these events and sends them to GA4 (Google Analytics 4).</p>
+      <div id="eventLog" class="event-log"></div>
+    </aside>
+
+    <section class="card explain">
+      <h2>How To Explain This</h2>
+      <div class="flow">
+        <div>Website action</div>
+        <div>GTM event<br><small>Google Tag Manager</small></div>
+        <div>GA4 report<br><small>Google Analytics 4</small></div>
+      </div>
+      <ul>
+        <li><strong>GA4 (Google Analytics 4)</strong> is where the client sees reporting: page views, button clicks, form submissions, and conversions.</li>
+        <li><strong>GTM (Google Tag Manager)</strong> is the manager that listens for events and sends them to GA4 without changing theme code every time.</li>
+        <li><strong>dataLayer</strong> is a JavaScript array where website actions can be pushed in a structured way.</li>
+        <li>Never send private form content such as names, emails, phone numbers, or full messages to GA4.</li>
+        <li><strong>CTA (Call To Action)</strong> means an action button or prompt, such as "Request a Consultation".</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    const log = document.getElementById("eventLog");
+
+    function pushEvent(eventData) {
+      const safeEvent = {
+        timestamp: new Date().toISOString(),
+        ...eventData
+      };
+
+      window.dataLayer.push(safeEvent);
+
+      const item = document.createElement("div");
+      item.className = "event";
+      item.textContent = JSON.stringify(safeEvent, null, 2);
+      log.prepend(item);
+    }
+
+    pushEvent({
+      event: "page_view",
+      page_title: "GA4 + GTM Tracking Demo",
+      page_path: "/ga-gtm-tracking-demo.html"
+    });
+
+    document.getElementById("ctaButton").addEventListener("click", function () {
+      pushEvent({
+        event: "cta_click",
+        cta_name: "request_consultation",
+        cta_location: "hero"
+      });
+    });
+
+    document.getElementById("phoneLink").addEventListener("click", function (event) {
+      event.preventDefault();
+      pushEvent({
+        event: "phone_click",
+        link_location: "hero"
+      });
+    });
+
+    document.getElementById("emailLink").addEventListener("click", function (event) {
+      event.preventDefault();
+      pushEvent({
+        event: "email_click",
+        link_location: "hero"
+      });
+    });
+
+    document.getElementById("demoForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      pushEvent({
+        event: "contact_form_submit",
+        form_name: "contact_quote_form",
+        form_location: "hero"
+      });
+    });
+  </script>
+</body>
+</html>
