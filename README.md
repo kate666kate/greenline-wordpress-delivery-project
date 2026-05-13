@@ -61,6 +61,7 @@ http://localhost:8090/case-study/
 - `wordpress-website-developer-portfolio/`: interview notes, workflow checklists, demo script, and skill files.
 - `wordpress-website-developer-portfolio/walkthrough-frames/`: visual project walkthrough frames.
 - `CLIENT_TRAINING_GUIDE.md`: client-facing guide for updating toolkit settings, portfolio projects, and shortcodes.
+- `GA_GTM_SETUP_NOTES.md`: GA4 and Google Tag Manager setup notes for tracking, form events, WooCommerce awareness, testing, and privacy.
 
 ## Interview Positioning
 
