@@ -103,6 +103,25 @@ WordPress concepts demonstrated:
 - Conditional feature checks
 - WooCommerce readiness
 
+### 7. API-powered portfolio grid
+
+Added:
+
+```text
+[greenline_portfolio_grid]
+```
+
+This shortcode renders a frontend grid and uses JavaScript `fetch` to load project data from the custom REST API endpoint.
+
+WordPress and frontend concepts demonstrated:
+
+- Shortcode-rendered frontend mount point
+- `wp_enqueue_script`
+- Passing REST API data to JavaScript
+- JavaScript `fetch`
+- Rendering API data into frontend cards
+- Loading, empty, and error states
+
 ## Interview Talking Point
 
 ```text
@@ -118,3 +137,4 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Create a `Portfolio Project`.
 - Visit `/wp-json/greenline/v1/portfolio`.
 - Add `[greenline_woocommerce_status]` to a page.
+- Add `[greenline_portfolio_grid]` to a page and confirm projects render as cards.

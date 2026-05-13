@@ -31,9 +31,14 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Shows whether WooCommerce is active.
    - Displays a settings-page admin notice.
 
+7. API-powered portfolio grid
+   - Shortcode: `[greenline_portfolio_grid]`
+   - Uses JavaScript `fetch` to load `/wp-json/greenline/v1/portfolio`.
+   - Renders published portfolio projects as frontend cards.
+
 ## Interview Talking Point
 
-This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, and plugin dependency awareness.
+This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, and plugin dependency awareness.
 
 For the step-by-step improvement process, see:
 

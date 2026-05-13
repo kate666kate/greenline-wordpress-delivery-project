@@ -11,7 +11,7 @@ Local WordPress portfolio project demonstrating practical website delivery skill
 - Contact form and SMTP testing with Mailpit
 - SEO checks, image alt text, and performance awareness
 - Backup and troubleshooting practice
-- A custom WordPress toolkit plugin with settings, shortcodes, a portfolio custom post type, REST API output, and WooCommerce awareness
+- A custom WordPress toolkit plugin with settings, shortcodes, a portfolio custom post type, REST API output, JavaScript API rendering, and WooCommerce awareness
 
 ## Latest Plugin Upgrade
 

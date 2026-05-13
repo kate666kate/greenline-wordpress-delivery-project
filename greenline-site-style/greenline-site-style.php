@@ -19,6 +19,22 @@ add_action('wp_enqueue_scripts', function () {
         [],
         GREENLINE_SITE_TOOLKIT_VERSION
     );
+
+    wp_enqueue_script(
+        'greenline-site-toolkit',
+        plugin_dir_url(__FILE__) . 'portfolio-grid.js',
+        [],
+        GREENLINE_SITE_TOOLKIT_VERSION,
+        true
+    );
+
+    wp_localize_script(
+        'greenline-site-toolkit',
+        'greenlinePortfolioGrid',
+        [
+            'endpoint' => esc_url_raw(rest_url('greenline/v1/portfolio')),
+        ]
+    );
 });
 
 function greenline_site_toolkit_defaults()
@@ -180,6 +196,23 @@ add_shortcode('greenline_hours', function () {
     </div>
     <?php
     return ob_get_clean();
+});
+
+add_shortcode('greenline_portfolio_grid', function ($atts) {
+    $atts = shortcode_atts(
+        [
+            'per_page' => 6,
+        ],
+        $atts,
+        'greenline_portfolio_grid'
+    );
+
+    $per_page = min(max((int) $atts['per_page'], 1), 12);
+
+    return sprintf(
+        '<div class="greenline-portfolio-grid" data-per-page="%1$d"><p class="greenline-portfolio-grid__loading">Loading portfolio projects...</p></div>',
+        $per_page
+    );
 });
 
 add_action('init', function () {
