@@ -60,6 +60,7 @@ http://localhost:8090/case-study/
 - `greenline-site-style/`: custom WordPress toolkit plugin and styling used by the project.
 - `wordpress-website-developer-portfolio/`: interview notes, workflow checklists, demo script, and skill files.
 - `wordpress-website-developer-portfolio/walkthrough-frames/`: visual project walkthrough frames.
+- `CLIENT_TRAINING_GUIDE.md`: client-facing guide for updating toolkit settings, portfolio projects, and shortcodes.
 
 ## Interview Positioning
 
