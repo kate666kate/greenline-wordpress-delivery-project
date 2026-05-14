@@ -122,10 +122,58 @@ WordPress and frontend concepts demonstrated:
 - Rendering API data into frontend cards
 - Loading, empty, and error states
 
+### 8. Google Tag Manager support
+
+Added a `GTM Container ID` setting to:
+
+```text
+Settings > Greenline Toolkit
+```
+
+When a valid ID such as `GTM-XXXXXXX` is saved, the plugin outputs:
+
+- GTM script in `wp_head`
+- GTM noscript iframe in `wp_body_open`
+
+WordPress and analytics concepts demonstrated:
+
+- GTM-ready WordPress integration
+- Admin-configurable tracking ID
+- Avoiding direct theme edits
+- Safe validation for `GTM-` container IDs
+
+### 9. Contact form lead tracking
+
+Added a small frontend tracking script:
+
+```text
+greenline-site-style/tracking-events.js
+```
+
+When a Contact Form 7 form successfully sends, the script pushes this event into the GTM data layer:
+
+```javascript
+{
+  event: "generate_lead",
+  form_plugin: "contact_form_7",
+  form_id: "..."
+}
+```
+
+This lets GTM send a GA4 lead event only after the form submission succeeds, instead of counting every form button click as a lead.
+
+WordPress and analytics concepts demonstrated:
+
+- Frontend event listening
+- Contact Form 7 event integration
+- GTM data layer events
+- GA4 lead/conversion tracking
+- Avoiding personal information in analytics events
+
 ## Interview Talking Point
 
 ```text
-I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, and a WooCommerce active check. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, and plugin dependency awareness.
+I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, and lead tracking for successful contact form submissions. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
 ```
 
 ## Test Checklist
@@ -138,3 +186,5 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Visit `/wp-json/greenline/v1/portfolio`.
 - Add `[greenline_woocommerce_status]` to a page.
 - Add `[greenline_portfolio_grid]` to a page and confirm projects render as cards.
+- Add a GTM Container ID in `Settings > Greenline Toolkit` and confirm the GTM script appears in page source.
+- Submit a Contact Form 7 form and confirm the `generate_lead` event appears in GTM Preview.

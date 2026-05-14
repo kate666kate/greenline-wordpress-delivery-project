@@ -55,6 +55,25 @@ Common options:
 
 For client sites, a plugin is often safer and easier to maintain.
 
+In this portfolio project, GTM can be added through the custom plugin:
+
+```text
+WordPress Admin > Settings > Greenline Toolkit > GTM Container ID
+```
+
+Example:
+
+```text
+GTM-XXXXXXX
+```
+
+The plugin then outputs:
+
+- GTM script in `wp_head`
+- GTM noscript iframe in `wp_body_open`
+
+This avoids manually editing theme files.
+
 ### 4. Configure GA4 (Google Analytics 4) Through GTM (Google Tag Manager)
 
 In GTM:
@@ -109,7 +128,7 @@ Example data layer event:
 document.addEventListener("wpcf7mailsent", function () {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    event: "contact_form_submit",
+    event: "generate_lead",
     form_name: "contact_form"
   });
 });
@@ -118,8 +137,22 @@ document.addEventListener("wpcf7mailsent", function () {
 GA4 event name:
 
 ```text
-contact_form_submit
+generate_lead
 ```
+
+In this portfolio project, the custom plugin includes this logic in:
+
+```text
+greenline-site-style/tracking-events.js
+```
+
+In GTM (Google Tag Manager), create:
+
+1. A custom event trigger named `CE - generate_lead`.
+2. Trigger event name: `generate_lead`.
+3. A GA4 event tag named `GA4 - generate_lead`.
+4. GA4 event name: `generate_lead`.
+5. Trigger: `CE - generate_lead`.
 
 ## Testing Checklist
 

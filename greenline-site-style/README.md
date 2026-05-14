@@ -1,6 +1,6 @@
 # Greenline Site Toolkit
 
-Version: `1.1.0`
+Version: `1.2.0`
 
 Custom WordPress practice plugin for the Greenline Studio portfolio project.
 
@@ -36,9 +36,20 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Uses JavaScript `fetch` to load `/wp-json/greenline/v1/portfolio`.
    - Renders published portfolio projects as frontend cards.
 
+8. Google Tag Manager support
+   - Setting: `Settings > Greenline Toolkit > GTM Container ID`
+   - Example value: `GTM-XXXXXXX`
+   - Outputs the GTM `<head>` script and `<body>` noscript iframe without editing theme files.
+
+9. Contact form lead tracking
+   - File: `tracking-events.js`
+   - Listens for Contact Form 7 successful submissions.
+   - Pushes a `generate_lead` event into `dataLayer`.
+   - Designed to be connected to a GA4 event tag inside GTM.
+
 ## Interview Talking Point
 
-This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, and plugin dependency awareness.
+This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, and plugin dependency awareness.
 
 For the step-by-step improvement process, see:
 

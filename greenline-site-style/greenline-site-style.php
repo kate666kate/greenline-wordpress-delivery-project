@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: Greenline Site Toolkit
- * Description: Practice toolkit for the Greenline Studio WordPress build: styling, shortcodes, portfolio content, REST data, and WooCommerce awareness.
- * Version: 1.1.0
+ * Description: Practice toolkit for the Greenline Studio WordPress build: styling, shortcodes, portfolio content, REST data, WooCommerce awareness, and lead tracking.
+ * Version: 1.2.0
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-define('GREENLINE_SITE_TOOLKIT_VERSION', '1.1.0');
+define('GREENLINE_SITE_TOOLKIT_VERSION', '1.2.0');
 define('GREENLINE_SITE_TOOLKIT_OPTION', 'greenline_site_toolkit_options');
 
 add_action('wp_enqueue_scripts', function () {
@@ -23,6 +23,14 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script(
         'greenline-site-toolkit',
         plugin_dir_url(__FILE__) . 'portfolio-grid.js',
+        [],
+        GREENLINE_SITE_TOOLKIT_VERSION,
+        true
+    );
+
+    wp_enqueue_script(
+        'greenline-site-toolkit-tracking',
+        plugin_dir_url(__FILE__) . 'tracking-events.js',
         [],
         GREENLINE_SITE_TOOLKIT_VERSION,
         true
@@ -47,6 +55,7 @@ function greenline_site_toolkit_defaults()
         'cta_button_text' => 'Request a Consultation',
         'cta_button_url' => '/contact/',
         'business_hours' => "Monday - Friday: 9:00am - 5:00pm\nSaturday: By appointment\nSunday: Closed",
+        'gtm_container_id' => '',
     ];
 }
 
@@ -69,7 +78,19 @@ function greenline_site_toolkit_sanitize_options($input)
         'cta_button_text' => sanitize_text_field($input['cta_button_text'] ?? $defaults['cta_button_text']),
         'cta_button_url' => esc_url_raw($input['cta_button_url'] ?? $defaults['cta_button_url']),
         'business_hours' => sanitize_textarea_field($input['business_hours'] ?? $defaults['business_hours']),
+        'gtm_container_id' => greenline_site_toolkit_sanitize_gtm_id($input['gtm_container_id'] ?? $defaults['gtm_container_id']),
     ];
+}
+
+function greenline_site_toolkit_sanitize_gtm_id($value)
+{
+    $value = strtoupper(trim((string) $value));
+
+    if ($value === '') {
+        return '';
+    }
+
+    return preg_match('/^GTM-[A-Z0-9]+$/', $value) ? $value : '';
 }
 
 add_action('admin_menu', function () {
@@ -138,6 +159,13 @@ function greenline_site_toolkit_render_settings_page()
                     <th scope="row"><label for="greenline-business-hours">Business hours</label></th>
                     <td><textarea id="greenline-business-hours" class="large-text" rows="5" name="<?php echo esc_attr(GREENLINE_SITE_TOOLKIT_OPTION); ?>[business_hours]"><?php echo esc_textarea($options['business_hours']); ?></textarea></td>
                 </tr>
+                <tr>
+                    <th scope="row"><label for="greenline-gtm-container-id">GTM Container ID</label></th>
+                    <td>
+                        <input id="greenline-gtm-container-id" class="regular-text" type="text" name="<?php echo esc_attr(GREENLINE_SITE_TOOLKIT_OPTION); ?>[gtm_container_id]" value="<?php echo esc_attr($options['gtm_container_id']); ?>" placeholder="GTM-XXXXXXX">
+                        <p class="description">Optional. Adds Google Tag Manager to the site without editing theme files.</p>
+                    </td>
+                </tr>
             </table>
 
             <?php submit_button(); ?>
@@ -145,6 +173,40 @@ function greenline_site_toolkit_render_settings_page()
     </div>
     <?php
 }
+
+add_action('wp_head', function () {
+    $options = greenline_site_toolkit_options();
+    $gtm_id = $options['gtm_container_id'];
+
+    if ($gtm_id === '') {
+        return;
+    }
+    ?>
+    <!-- Google Tag Manager added by Greenline Site Toolkit -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','<?php echo esc_js($gtm_id); ?>');
+    </script>
+    <!-- End Google Tag Manager -->
+    <?php
+}, 1);
+
+add_action('wp_body_open', function () {
+    $options = greenline_site_toolkit_options();
+    $gtm_id = $options['gtm_container_id'];
+
+    if ($gtm_id === '') {
+        return;
+    }
+    ?>
+    <!-- Google Tag Manager (noscript) added by Greenline Site Toolkit -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr($gtm_id); ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <?php
+}, 1);
 
 add_shortcode('greenline_cta', function ($atts) {
     $options = greenline_site_toolkit_options();
