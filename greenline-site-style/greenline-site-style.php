@@ -240,6 +240,7 @@ add_shortcode('greenline_cta', function ($atts) {
 add_shortcode('greenline_hours', function () {
     $options = greenline_site_toolkit_options();
     $lines = array_filter(array_map('trim', explode("\n", $options['business_hours'])));
+    $phone_href = preg_replace('/[^0-9+]/', '', $options['phone']);
 
     ob_start();
     ?>
@@ -254,7 +255,14 @@ add_shortcode('greenline_hours', function () {
             <strong>Email:</strong>
             <a href="mailto:<?php echo esc_attr($options['contact_email']); ?>"><?php echo esc_html($options['contact_email']); ?></a>
         </p>
-        <p><strong>Phone:</strong> <?php echo esc_html($options['phone']); ?></p>
+        <p>
+            <strong>Phone:</strong>
+            <?php if ($phone_href) : ?>
+                <a href="tel:<?php echo esc_attr($phone_href); ?>"><?php echo esc_html($options['phone']); ?></a>
+            <?php else : ?>
+                <?php echo esc_html($options['phone']); ?>
+            <?php endif; ?>
+        </p>
     </div>
     <?php
     return ob_get_clean();

@@ -47,9 +47,15 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Pushes a `generate_lead` event into `dataLayer`.
    - Designed to be connected to a GA4 event tag inside GTM.
 
+10. Phone click tracking
+   - The `[greenline_hours]` shortcode outputs the phone number as a `tel:` link.
+   - `tracking-events.js` listens for phone link clicks.
+   - Pushes a `phone_click` event into `dataLayer`.
+   - Designed to be connected to a GA4 event tag inside GTM.
+
 ## Interview Talking Point
 
-This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, and plugin dependency awareness.
+This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, and plugin dependency awareness.
 
 For the step-by-step improvement process, see:
 

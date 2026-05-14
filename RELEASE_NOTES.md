@@ -170,10 +170,37 @@ WordPress and analytics concepts demonstrated:
 - GA4 lead/conversion tracking
 - Avoiding personal information in analytics events
 
+### 10. Phone click tracking
+
+Updated the business hours shortcode so the phone number becomes a clickable `tel:` link. Added tracking logic in:
+
+```text
+greenline-site-style/tracking-events.js
+```
+
+When a visitor clicks the phone link, the script pushes this event into the GTM data layer:
+
+```javascript
+{
+  event: "phone_click",
+  event_source: "phone_link",
+  link_url: "tel:..."
+}
+```
+
+This lets GTM send a GA4 event for phone enquiries, which is useful for service businesses that receive leads by phone as well as forms.
+
+WordPress and analytics concepts demonstrated:
+
+- Click event tracking
+- `tel:` link handling
+- GTM data layer events
+- GA4 contact-intent tracking
+
 ## Interview Talking Point
 
 ```text
-I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, and lead tracking for successful contact form submissions. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
+I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, and phone click tracking. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
 ```
 
 ## Test Checklist
@@ -188,3 +215,4 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Add `[greenline_portfolio_grid]` to a page and confirm projects render as cards.
 - Add a GTM Container ID in `Settings > Greenline Toolkit` and confirm the GTM script appears in page source.
 - Submit a Contact Form 7 form and confirm the `generate_lead` event appears in GTM Preview.
+- Click the phone link in the `[greenline_hours]` block and confirm the `phone_click` event appears in GTM Preview.

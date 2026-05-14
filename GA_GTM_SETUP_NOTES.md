@@ -154,6 +154,28 @@ In GTM (Google Tag Manager), create:
 4. GA4 event name: `generate_lead`.
 5. Trigger: `CE - generate_lead`.
 
+## Phone Click Tracking Idea
+
+Phone enquiries can be important for local service businesses. If the phone number is output as a `tel:` link, JavaScript can listen for phone clicks and push a custom event to GTM.
+
+Example data layer event:
+
+```javascript
+window.dataLayer.push({
+  event: "phone_click",
+  event_source: "phone_link",
+  link_url: "tel:0390000000"
+});
+```
+
+In GTM (Google Tag Manager), create:
+
+1. A custom event trigger named `CE - phone_click`.
+2. Trigger event name: `phone_click`.
+3. A GA4 event tag named `GA4 - phone_click`.
+4. GA4 event name: `phone_click`.
+5. Trigger: `CE - phone_click`.
+
 ## Testing Checklist
 
 Before launch:
@@ -162,6 +184,7 @@ Before launch:
 - GA4 (Google Analytics 4) receives page views.
 - GTM (Google Tag Manager) Preview mode works.
 - Contact form submit event fires only after successful submission.
+- Phone click event fires when a `tel:` link is clicked.
 - CTA click tracking works.
 - Phone and email click events work if configured.
 - WooCommerce events are tested if shop functionality is active.
