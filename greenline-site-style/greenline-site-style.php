@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Greenline Site Toolkit
  * Description: Practice toolkit for the Greenline Studio WordPress build: styling, shortcodes, portfolio content, REST data, WooCommerce awareness, and lead tracking.
- * Version: 1.2.0
+ * Version: 1.2.2
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-define('GREENLINE_SITE_TOOLKIT_VERSION', '1.2.0');
+define('GREENLINE_SITE_TOOLKIT_VERSION', '1.2.2');
 define('GREENLINE_SITE_TOOLKIT_OPTION', 'greenline_site_toolkit_options');
 
 add_action('wp_enqueue_scripts', function () {
