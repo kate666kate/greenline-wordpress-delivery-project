@@ -21,6 +21,9 @@
   document.addEventListener("click", function (event) {
     var phoneLink = event.target.closest('a[href^="tel:"]');
     var emailLink = event.target.closest('a[href^="mailto:"]');
+    var ctaLink = event.target.closest(
+      '.greenline-toolkit-button, .wp-block-button__link[href*="/contact/"]'
+    );
 
     if (phoneLink) {
       pushEvent({
@@ -35,6 +38,15 @@
         event: "email_click",
         event_source: "email_link",
         link_url: emailLink.getAttribute("href")
+      });
+    }
+
+    if (ctaLink) {
+      pushEvent({
+        event: "cta_click",
+        event_source: ctaLink.classList.contains("greenline-toolkit-button") ? "greenline_cta" : "wp_block_button",
+        link_text: ctaLink.textContent.trim(),
+        link_url: ctaLink.getAttribute("href")
       });
     }
   });
