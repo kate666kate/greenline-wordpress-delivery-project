@@ -224,10 +224,41 @@ WordPress and analytics concepts demonstrated:
 - GTM custom event triggers
 - GA4 enquiry-intent reporting
 
+### 12. CTA click tracking
+
+Added click tracking for buttons output by:
+
+```text
+[greenline_cta]
+```
+
+The tracker also recognises WordPress block buttons that link to `/contact/`, such as `Start a conversation`.
+
+When a visitor clicks a CTA button, the script pushes this event into the GTM data layer:
+
+```javascript
+{
+  event: "cta_click",
+  event_source: "greenline_cta",
+  link_text: "...",
+  link_url: "..."
+}
+```
+
+This helps measure whether visitors are engaging with key calls to action before submitting a form, calling, or emailing.
+
+WordPress and analytics concepts demonstrated:
+
+- CTA engagement tracking
+- Event parameters
+- Reusable frontend tracking script
+- GA4 funnel and intent reporting
+- Support for shortcode CTAs and WordPress block buttons
+
 ## Interview Talking Point
 
 ```text
-I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, and email click tracking. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
+I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, email click tracking, and CTA click tracking. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
 ```
 
 ## Test Checklist
@@ -244,3 +275,4 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Submit a Contact Form 7 form and confirm the `generate_lead` event appears in GTM Preview.
 - Click the phone link in the `[greenline_hours]` block and confirm the `phone_click` event appears in GTM Preview.
 - Click the email link in the `[greenline_hours]` block and confirm the `email_click` event appears in GTM Preview.
+- Click the `[greenline_cta]` button and confirm the `cta_click` event appears in GTM Preview.
