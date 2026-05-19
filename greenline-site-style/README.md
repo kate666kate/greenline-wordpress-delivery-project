@@ -59,9 +59,16 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Pushes an `email_click` event into `dataLayer`.
    - Designed to be connected to a GA4 event tag inside GTM.
 
+12. CTA click tracking
+   - The `[greenline_cta]` shortcode outputs a CTA button.
+   - WordPress block buttons that link to `/contact/` are also treated as CTAs.
+   - `tracking-events.js` listens for `.greenline-toolkit-button` and contact-focused block button clicks.
+   - Pushes a `cta_click` event into `dataLayer`.
+   - Designed to measure key call-to-action engagement in GA4.
+
 ## Interview Talking Point
 
-This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, and plugin dependency awareness.
+This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, CTA tracking, and plugin dependency awareness.
 
 For the step-by-step improvement process, see:
 
