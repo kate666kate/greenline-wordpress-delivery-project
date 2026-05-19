@@ -198,6 +198,29 @@ In GTM (Google Tag Manager), create:
 4. GA4 event name: `email_click`.
 5. Trigger: `CE - email_click`.
 
+## CTA Click Tracking Idea
+
+CTA (Call To Action) clicks show whether users are engaging with important buttons before they become enquiries. In this project, CTA tracking covers both the custom `[greenline_cta]` button and WordPress block buttons that link to `/contact/`.
+
+Example data layer event:
+
+```javascript
+window.dataLayer.push({
+  event: "cta_click",
+  event_source: "greenline_cta",
+  link_text: "Request a Consultation",
+  link_url: "/contact/"
+});
+```
+
+In GTM (Google Tag Manager), create:
+
+1. A custom event trigger named `CE - cta_click`.
+2. Trigger event name: `cta_click`.
+3. A GA4 event tag named `GA4 - cta_click`.
+4. GA4 event name: `cta_click`.
+5. Trigger: `CE - cta_click`.
+
 ## Testing Checklist
 
 Before launch:
