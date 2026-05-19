@@ -11,7 +11,7 @@ Local WordPress portfolio project demonstrating practical website delivery skill
 - Contact form and SMTP testing with Mailpit
 - SEO checks, image alt text, and performance awareness
 - Backup and troubleshooting practice
-- A custom WordPress toolkit plugin with settings, shortcodes, a portfolio custom post type, REST API output, JavaScript API rendering, Google Tag Manager support, enquiry tracking, a tracking summary block, and WooCommerce awareness
+- A custom WordPress toolkit plugin with settings, shortcodes, a portfolio custom post type, REST API output, JavaScript API rendering, Google Tag Manager support, enquiry tracking, tracking summary, client handover checklist, website audit summary, WooCommerce readiness, and WooCommerce awareness
 
 ## Latest Plugin Upgrade
 
@@ -60,7 +60,7 @@ http://localhost:8090/case-study/
 - `greenline-site-style/`: custom WordPress toolkit plugin and styling used by the project.
 - `wordpress-website-developer-portfolio/`: interview notes, workflow checklists, demo script, and skill files.
 - `wordpress-website-developer-portfolio/walkthrough-frames/`: visual project walkthrough frames.
-- `CLIENT_TRAINING_GUIDE.md`: client-facing guide for updating toolkit settings, portfolio projects, and shortcodes.
+- `CLIENT_TRAINING_GUIDE.md`: client-facing guide for updating toolkit settings, portfolio projects, shortcodes, maintenance checks, and handover training.
 - `GA_GTM_SETUP_NOTES.md`: GA4 and Google Tag Manager setup notes for tracking, form events, WooCommerce awareness, testing, and privacy.
 - `ga-gtm-tracking-demo.html`: local visual demo showing how website actions can push events to a simulated GTM `dataLayer`.
 

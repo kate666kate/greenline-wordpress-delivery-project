@@ -141,6 +141,8 @@ Available shortcodes:
 [greenline_hours]
 [greenline_woocommerce_status]
 [greenline_portfolio_grid]
+[greenline_tracking_summary]
+[greenline_handover_checklist]
 ```
 
 What they do:
@@ -149,6 +151,8 @@ What they do:
 - `[greenline_hours]`: shows business hours and contact details
 - `[greenline_woocommerce_status]`: shows whether WooCommerce is active
 - `[greenline_portfolio_grid]`: loads portfolio projects from the custom REST API and displays them as cards
+- `[greenline_tracking_summary]`: explains the GA4/GTM enquiry tracking setup on a case study page
+- `[greenline_handover_checklist]`: shows a client handover and maintenance checklist
 
 ## 6. Basic Page Editing
 
@@ -179,7 +183,27 @@ Before publishing:
 - Check links
 - Check contact forms
 
-## 7. When To Ask For Support
+## 7. Maintenance Checklist
+
+Recommended monthly checks:
+
+- Confirm WordPress, theme, and plugin updates are available.
+- Take a backup before running updates.
+- Update one group at a time where possible.
+- Check the homepage, contact page, forms, navigation, and key buttons after updates.
+- Confirm enquiry emails still arrive.
+- Check the site on desktop and mobile.
+- Review broken links, spam comments, and security notices.
+
+Recommended quarterly checks:
+
+- Review SEO titles and descriptions for important pages.
+- Check image sizes and replace oversized media where needed.
+- Confirm business hours, phone number, email address, and service text are still correct.
+- Review GA4/GTM tracking events if marketing goals have changed.
+- Check user accounts and remove access that is no longer needed.
+
+## 8. When To Ask For Support
 
 Ask for support before changing:
 
@@ -192,7 +216,22 @@ Ask for support before changing:
 - Database
 - PHP version
 - User roles and admin accounts
+- GA4 or GTM tracking tags
+- SMTP, MX, SPF, DKIM, or DMARC records
+
+## 9. Client Handover Call Agenda
+
+Use this structure for a short handover call:
+
+1. Show the finished website pages.
+2. Show how to edit text and images safely.
+3. Show `Settings > Greenline Toolkit`.
+4. Show how portfolio projects are added.
+5. Submit a test enquiry form and confirm the email arrives.
+6. Explain what the client should not change without support.
+7. Explain the maintenance schedule and backup process.
+8. Confirm who to contact for urgent support.
 
 ## Client Handover Summary
 
-The Greenline Studio site includes a custom toolkit that allows safe content updates without editing code. The client can update common business information from `Settings > Greenline Toolkit`, add portfolio projects from the WordPress admin, and use shortcodes to display reusable content blocks across the website.
+The Greenline Studio site includes a custom toolkit that allows safe content updates without editing code. The client can update common business information from `Settings > Greenline Toolkit`, add portfolio projects from the WordPress admin, and use shortcodes to display reusable content blocks across the website. Ongoing maintenance should include planned backups, updates, form testing, analytics checks, and clear escalation for hosting, DNS, database, payment, and email-deliverability changes.

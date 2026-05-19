@@ -194,6 +194,194 @@
   font-weight: 700;
 }
 
+.greenline-handover-checklist {
+  max-width: 1080px;
+  margin: 42px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #f6faf1);
+  border: 1px solid rgba(47, 125, 92, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(24, 52, 47, 0.09);
+}
+
+.greenline-handover-checklist__header {
+  max-width: 820px;
+}
+
+.greenline-handover-checklist__header h2 {
+  margin: 0 0 12px;
+  color: var(--gl-ink);
+}
+
+.greenline-handover-checklist__header p:last-child {
+  margin: 0;
+  color: var(--gl-muted);
+}
+
+.greenline-handover-checklist__grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.greenline-handover-card {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(47, 125, 92, 0.14);
+  border-top: 5px solid var(--gl-leaf);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(24, 52, 47, 0.06);
+}
+
+.greenline-handover-card:nth-child(2) {
+  border-top-color: #7e9f6b;
+}
+
+.greenline-handover-card:nth-child(3) {
+  border-top-color: var(--gl-clay);
+}
+
+.greenline-handover-card:nth-child(4) {
+  border-top-color: #8aa6a0;
+}
+
+.greenline-handover-card h3 {
+  margin: 0 0 12px;
+  color: var(--gl-ink);
+  font-size: 19px;
+}
+
+.greenline-handover-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.greenline-handover-card li {
+  margin-bottom: 8px;
+  color: var(--gl-muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.greenline-site-audit-summary {
+  max-width: 1080px;
+  margin: 42px auto;
+  padding: 30px;
+  background: var(--gl-ink);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(24, 52, 47, 0.16);
+}
+
+.greenline-site-audit-summary__header {
+  max-width: 840px;
+}
+
+.greenline-site-audit-summary h2 {
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.greenline-site-audit-summary__header p:last-child {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.greenline-site-audit-summary__grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.greenline-site-audit-card {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+}
+
+.greenline-site-audit-card span {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  background: #edf5df;
+  color: var(--gl-ink);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.greenline-site-audit-card h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.greenline-site-audit-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.greenline-woocommerce-readiness {
+  max-width: 1080px;
+  margin: 42px auto;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid rgba(47, 125, 92, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(24, 52, 47, 0.09);
+}
+
+.greenline-woocommerce-readiness__header {
+  max-width: 840px;
+}
+
+.greenline-woocommerce-readiness__header h2 {
+  margin: 0 0 12px;
+  color: var(--gl-ink);
+}
+
+.greenline-woocommerce-readiness__header p:last-child {
+  margin: 0;
+  color: var(--gl-muted);
+}
+
+.greenline-woocommerce-readiness__header strong {
+  color: var(--gl-leaf);
+}
+
+.greenline-woocommerce-readiness__grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.greenline-woocommerce-readiness-card {
+  padding: 18px;
+  background: linear-gradient(135deg, #edf5df, #ffffff);
+  border: 1px solid rgba(47, 125, 92, 0.16);
+  border-radius: 12px;
+}
+
+.greenline-woocommerce-readiness-card h3 {
+  margin: 0 0 10px;
+  color: var(--gl-ink);
+  font-size: 19px;
+}
+
+.greenline-woocommerce-readiness-card p {
+  margin: 0;
+  color: var(--gl-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 .greenline-portfolio-grid {
   max-width: 1080px;
   margin: 42px auto;
@@ -674,7 +862,10 @@
   .case-study-map,
   .case-study-proof,
   .greenline-tracking-flow,
-  .greenline-tracking-events {
+  .greenline-tracking-events,
+  .greenline-handover-checklist__grid,
+  .greenline-site-audit-summary__grid,
+  .greenline-woocommerce-readiness__grid {
     grid-template-columns: 1fr;
   }
 

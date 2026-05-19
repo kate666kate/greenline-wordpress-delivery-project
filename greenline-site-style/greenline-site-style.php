@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Greenline Site Toolkit
  * Description: Practice toolkit for the Greenline Studio WordPress build: styling, shortcodes, portfolio content, REST data, WooCommerce awareness, and lead tracking.
- * Version: 1.3.0
+ * Version: 1.3.3
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-define('GREENLINE_SITE_TOOLKIT_VERSION', '1.3.0');
+define('GREENLINE_SITE_TOOLKIT_VERSION', '1.3.3');
 define('GREENLINE_SITE_TOOLKIT_OPTION', 'greenline_site_toolkit_options');
 
 add_action('wp_enqueue_scripts', function () {
@@ -328,6 +328,173 @@ add_shortcode('greenline_tracking_summary', function () {
                     <h3><?php echo esc_html($event['label']); ?></h3>
                     <p><?php echo esc_html($event['meaning']); ?></p>
                     <small><?php echo esc_html($event['source']); ?></small>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php
+    return ob_get_clean();
+});
+
+add_shortcode('greenline_handover_checklist', function () {
+    $handover_items = [
+        [
+            'title' => 'Client training',
+            'items' => [
+                'Show how to update pages, images, business hours, and CTA text.',
+                'Explain which areas are safe to edit and which need support.',
+                'Confirm the client can submit and receive a test enquiry.',
+            ],
+        ],
+        [
+            'title' => 'Launch checks',
+            'items' => [
+                'Check forms, links, mobile layout, SEO titles, sitemap, and SSL.',
+                'Confirm DNS, email records, and analytics tracking are working.',
+                'Keep a rollback path before making high-risk launch changes.',
+            ],
+        ],
+        [
+            'title' => 'Maintenance rhythm',
+            'items' => [
+                'Review plugin, theme, and WordPress updates on a planned schedule.',
+                'Back up before updates and test key pages afterwards.',
+                'Monitor forms, spam, broken links, performance, and security notices.',
+            ],
+        ],
+        [
+            'title' => 'Support boundaries',
+            'items' => [
+                'Content edits are safe for the client after training.',
+                'DNS, database, PHP, payment, and user-role changes need developer support.',
+                'Document changes so future troubleshooting is faster.',
+            ],
+        ],
+    ];
+
+    ob_start();
+    ?>
+    <section class="greenline-handover-checklist" aria-label="Client handover and maintenance checklist">
+        <div class="greenline-handover-checklist__header">
+            <p class="greenline-toolkit-eyebrow">Client Handover</p>
+            <h2>Training, launch checks, and maintenance plan</h2>
+            <p>
+                This handover checklist turns the website build into a maintainable client project.
+                It shows what the client can safely update and what should be handled with developer support.
+            </p>
+        </div>
+
+        <div class="greenline-handover-checklist__grid">
+            <?php foreach ($handover_items as $section) : ?>
+                <article class="greenline-handover-card">
+                    <h3><?php echo esc_html($section['title']); ?></h3>
+                    <ul>
+                        <?php foreach ($section['items'] as $item) : ?>
+                            <li><?php echo esc_html($item); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php
+    return ob_get_clean();
+});
+
+add_shortcode('greenline_site_audit_summary', function () {
+    $audit_items = [
+        [
+            'area' => 'Performance',
+            'status' => 'Reviewed',
+            'summary' => 'Images, layout weight, mobile display, and key page loading were checked before handover.',
+        ],
+        [
+            'area' => 'Security',
+            'status' => 'Planned',
+            'summary' => 'Admin access, plugin updates, backups, SSL, and risky settings are treated as controlled maintenance tasks.',
+        ],
+        [
+            'area' => 'SEO',
+            'status' => 'Checked',
+            'summary' => 'Clean URLs, page titles, meta descriptions, sitemap, robots settings, headings, and alt text were reviewed.',
+        ],
+        [
+            'area' => 'Forms',
+            'status' => 'Tested',
+            'summary' => 'Contact form delivery was tested with Mailpit, and successful submissions can trigger GA4 lead tracking.',
+        ],
+        [
+            'area' => 'Recovery',
+            'status' => 'Documented',
+            'summary' => 'Migration, backup, rollback thinking, database access, and update testing are included in the support workflow.',
+        ],
+    ];
+
+    ob_start();
+    ?>
+    <section class="greenline-site-audit-summary" aria-label="Website audit summary">
+        <div class="greenline-site-audit-summary__header">
+            <p class="greenline-toolkit-eyebrow">Website Audit</p>
+            <h2>Performance, security, SEO, and recovery checks</h2>
+            <p>
+                This audit summary shows the final checks I would discuss before handing a WordPress site to a client.
+                It turns technical QA into a clear launch-readiness snapshot.
+            </p>
+        </div>
+
+        <div class="greenline-site-audit-summary__grid">
+            <?php foreach ($audit_items as $item) : ?>
+                <article class="greenline-site-audit-card">
+                    <span><?php echo esc_html($item['status']); ?></span>
+                    <h3><?php echo esc_html($item['area']); ?></h3>
+                    <p><?php echo esc_html($item['summary']); ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php
+    return ob_get_clean();
+});
+
+add_shortcode('greenline_woocommerce_readiness', function () {
+    $is_active = greenline_site_toolkit_is_woocommerce_active();
+    $readiness_items = [
+        [
+            'area' => 'Products',
+            'summary' => 'Confirm product names, categories, pricing, stock rules, images, and descriptions are ready.',
+        ],
+        [
+            'area' => 'Checkout',
+            'summary' => 'Check cart, checkout fields, payment methods, tax settings, shipping options, and order emails.',
+        ],
+        [
+            'area' => 'Testing',
+            'summary' => 'Place a test order, confirm customer/admin emails, review refunds, and check mobile checkout.',
+        ],
+        [
+            'area' => 'Operations',
+            'summary' => 'Confirm who manages products, order fulfilment, coupons, reports, backups, and plugin updates.',
+        ],
+    ];
+
+    ob_start();
+    ?>
+    <section class="greenline-woocommerce-readiness" aria-label="WooCommerce readiness checklist">
+        <div class="greenline-woocommerce-readiness__header">
+            <p class="greenline-toolkit-eyebrow">WooCommerce Readiness</p>
+            <h2>eCommerce setup and launch checks</h2>
+            <p>
+                WooCommerce status:
+                <strong><?php echo $is_active ? 'Active' : 'Not active'; ?></strong>.
+                This checklist shows what I would verify before enabling shop features on a client website.
+            </p>
+        </div>
+
+        <div class="greenline-woocommerce-readiness__grid">
+            <?php foreach ($readiness_items as $item) : ?>
+                <article class="greenline-woocommerce-readiness-card">
+                    <h3><?php echo esc_html($item['area']); ?></h3>
+                    <p><?php echo esc_html($item['summary']); ?></p>
                 </article>
             <?php endforeach; ?>
         </div>

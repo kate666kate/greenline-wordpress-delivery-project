@@ -1,6 +1,6 @@
 # Greenline Site Toolkit
 
-Version: `1.3.0`
+Version: `1.3.3`
 
 Custom WordPress practice plugin for the Greenline Studio portfolio project.
 
@@ -72,9 +72,24 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Explains `page_view`, `cta_click`, `generate_lead`, `phone_click`, and `email_click`.
    - Helps show the analytics setup to clients, interviewers, or non-technical stakeholders.
 
+14. Client handover checklist shortcode
+   - Usage: `[greenline_handover_checklist]`
+   - Displays a handover board for client training, launch checks, maintenance rhythm, and support boundaries.
+   - Helps explain how a finished WordPress build becomes a maintainable client project.
+
+15. Website audit summary shortcode
+   - Usage: `[greenline_site_audit_summary]`
+   - Displays a launch-readiness summary for performance, security, SEO, forms, and recovery.
+   - Helps present QA and maintenance thinking in a client-friendly way.
+
+16. WooCommerce readiness shortcode
+   - Usage: `[greenline_woocommerce_readiness]`
+   - Displays ecommerce launch checks for products, checkout, testing, and operations.
+   - Helps demonstrate WooCommerce readiness beyond simply checking whether the plugin is active.
+
 ## Interview Talking Point
 
-This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, CTA tracking, a client-friendly tracking summary, and plugin dependency awareness.
+This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, CTA tracking, a client-friendly tracking summary, a handover checklist, a website audit summary, WooCommerce readiness, and plugin dependency awareness.
 
 For the step-by-step improvement process, see:
 

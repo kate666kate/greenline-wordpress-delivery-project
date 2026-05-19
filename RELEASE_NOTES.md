@@ -290,10 +290,102 @@ WordPress and analytics concepts demonstrated:
 - GTM data layer workflow explanation
 - Turning technical tracking work into client-friendly language
 
+### 14. Client handover checklist
+
+Added:
+
+```text
+[greenline_handover_checklist]
+```
+
+This outputs a visual handover board for:
+
+- Client training
+- Launch checks
+- Maintenance rhythm
+- Support boundaries
+
+The goal is to show the work that happens after a WordPress website is built: training the client, checking the launch, planning updates, and making sure risky changes are escalated instead of done casually.
+
+Updated:
+
+```text
+CLIENT_TRAINING_GUIDE.md
+```
+
+The guide now includes:
+
+- Safe client edits
+- Shortcode usage
+- Monthly maintenance checks
+- Quarterly review checks
+- Handover call agenda
+- Items that require developer support
+
+WordPress and operations concepts demonstrated:
+
+- Client handover
+- Maintenance planning
+- Support boundaries
+- Training documentation
+- Turning a website build into an ongoing support workflow
+
+### 15. Website audit summary
+
+Added:
+
+```text
+[greenline_site_audit_summary]
+```
+
+This outputs a launch-readiness summary for:
+
+- Performance
+- Security
+- SEO
+- Forms
+- Recovery
+
+The goal is to show how a finished WordPress site can be reviewed before handover. It makes the project stronger for Website Developer roles because it connects page building with technical QA, maintenance planning, and client-facing reporting.
+
+WordPress and operations concepts demonstrated:
+
+- Performance awareness
+- Security maintenance planning
+- SEO launch review
+- Form testing
+- Backup and recovery thinking
+- Client-friendly QA reporting
+
+### 16. WooCommerce readiness checklist
+
+Added:
+
+```text
+[greenline_woocommerce_readiness]
+```
+
+This outputs an ecommerce launch checklist for:
+
+- Products
+- Checkout
+- Testing
+- Operations
+
+The block uses the existing WooCommerce active check and adds a client-friendly explanation of what should be reviewed before enabling shop features.
+
+WordPress and WooCommerce concepts demonstrated:
+
+- WooCommerce dependency awareness
+- Product and checkout readiness
+- Payment, shipping, tax, and email testing awareness
+- Test order workflow
+- Store operations planning
+
 ## Interview Talking Point
 
 ```text
-I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, email click tracking, CTA click tracking, and a tracking summary block for the case study page. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, analytics QA, and client-friendly reporting.
+I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, email click tracking, CTA click tracking, a tracking summary block, a client handover checklist, a website audit summary, and a WooCommerce readiness checklist. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, analytics QA, client-friendly reporting, website handover planning, launch-readiness checks, and ecommerce setup thinking.
 ```
 
 ## Test Checklist
@@ -312,3 +404,6 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Click the email link in the `[greenline_hours]` block and confirm the `email_click` event appears in GTM Preview.
 - Click the `[greenline_cta]` button and confirm the `cta_click` event appears in GTM Preview.
 - Add `[greenline_tracking_summary]` to the case study page and confirm the tracking funnel summary displays clearly.
+- Add `[greenline_handover_checklist]` to the case study page and confirm the handover board displays clearly.
+- Add `[greenline_site_audit_summary]` to the case study page and confirm the audit summary displays clearly.
+- Add `[greenline_woocommerce_readiness]` to the case study page and confirm the ecommerce readiness checklist displays clearly.
