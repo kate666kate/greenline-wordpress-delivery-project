@@ -1,6 +1,6 @@
 # Greenline Site Toolkit
 
-Version: `1.2.2`
+Version: `1.3.0`
 
 Custom WordPress practice plugin for the Greenline Studio portfolio project.
 
@@ -66,9 +66,15 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Pushes a `cta_click` event into `dataLayer`.
    - Designed to measure key call-to-action engagement in GA4.
 
+13. Tracking summary shortcode
+   - Usage: `[greenline_tracking_summary]`
+   - Displays a case-study friendly tracking funnel.
+   - Explains `page_view`, `cta_click`, `generate_lead`, `phone_click`, and `email_click`.
+   - Helps show the analytics setup to clients, interviewers, or non-technical stakeholders.
+
 ## Interview Talking Point
 
-This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, CTA tracking, and plugin dependency awareness.
+This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, CTA tracking, a client-friendly tracking summary, and plugin dependency awareness.
 
 For the step-by-step improvement process, see:
 

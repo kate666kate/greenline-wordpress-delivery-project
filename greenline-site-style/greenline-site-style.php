@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Greenline Site Toolkit
  * Description: Practice toolkit for the Greenline Studio WordPress build: styling, shortcodes, portfolio content, REST data, WooCommerce awareness, and lead tracking.
- * Version: 1.2.2
+ * Version: 1.3.0
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-define('GREENLINE_SITE_TOOLKIT_VERSION', '1.2.2');
+define('GREENLINE_SITE_TOOLKIT_VERSION', '1.3.0');
 define('GREENLINE_SITE_TOOLKIT_OPTION', 'greenline_site_toolkit_options');
 
 add_action('wp_enqueue_scripts', function () {
@@ -264,6 +264,74 @@ add_shortcode('greenline_hours', function () {
             <?php endif; ?>
         </p>
     </div>
+    <?php
+    return ob_get_clean();
+});
+
+add_shortcode('greenline_tracking_summary', function () {
+    $events = [
+        [
+            'name' => 'page_view',
+            'label' => 'Page view',
+            'source' => 'GA4 base tag',
+            'meaning' => 'Records that a visitor loaded a page.',
+        ],
+        [
+            'name' => 'cta_click',
+            'label' => 'CTA click',
+            'source' => 'GTM custom event',
+            'meaning' => 'Shows interest before the visitor reaches the contact page.',
+        ],
+        [
+            'name' => 'generate_lead',
+            'label' => 'Form lead',
+            'source' => 'Contact Form 7 success event',
+            'meaning' => 'Counts a real enquiry only after the form sends successfully.',
+        ],
+        [
+            'name' => 'phone_click',
+            'label' => 'Phone enquiry',
+            'source' => 'Clickable tel link',
+            'meaning' => 'Tracks visitors who prefer to call instead of filling a form.',
+        ],
+        [
+            'name' => 'email_click',
+            'label' => 'Email enquiry',
+            'source' => 'Clickable mailto link',
+            'meaning' => 'Tracks visitors who prefer to enquire by email.',
+        ],
+    ];
+
+    ob_start();
+    ?>
+    <section class="greenline-tracking-summary" aria-label="GA4 and GTM tracking summary">
+        <div class="greenline-tracking-summary__intro">
+            <p class="greenline-toolkit-eyebrow">GA4 + GTM Tracking</p>
+            <h2>Enquiry tracking funnel</h2>
+            <p>
+                This demo connects WordPress contact actions with GA4 reporting through GTM.
+                The base GA4 tag records page views, while custom events show enquiry intent.
+            </p>
+        </div>
+
+        <div class="greenline-tracking-flow" aria-label="Tracking flow">
+            <span>Visitor lands on site</span>
+            <span>Clicks CTA</span>
+            <span>Submits form, calls, or emails</span>
+            <span>GA4 receives enquiry event</span>
+        </div>
+
+        <div class="greenline-tracking-events">
+            <?php foreach ($events as $event) : ?>
+                <article class="greenline-tracking-event">
+                    <span><?php echo esc_html($event['name']); ?></span>
+                    <h3><?php echo esc_html($event['label']); ?></h3>
+                    <p><?php echo esc_html($event['meaning']); ?></p>
+                    <small><?php echo esc_html($event['source']); ?></small>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
     <?php
     return ob_get_clean();
 });

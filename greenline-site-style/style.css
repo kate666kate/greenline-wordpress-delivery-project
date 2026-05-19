@@ -90,6 +90,110 @@
   background: #fff6f1;
 }
 
+.greenline-tracking-summary {
+  max-width: 1080px;
+  margin: 42px auto;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid rgba(47, 125, 92, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(24, 52, 47, 0.09);
+}
+
+.greenline-tracking-summary__intro {
+  max-width: 780px;
+}
+
+.greenline-tracking-summary h2 {
+  margin: 0 0 12px;
+  color: var(--gl-ink);
+}
+
+.greenline-tracking-summary__intro p:last-child {
+  margin: 0;
+  color: var(--gl-muted);
+}
+
+.greenline-tracking-flow {
+  margin: 26px 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.greenline-tracking-flow span {
+  position: relative;
+  min-height: 72px;
+  padding: 14px;
+  display: grid;
+  align-items: center;
+  background: linear-gradient(135deg, #edf5df, #ffffff);
+  border: 1px solid rgba(47, 125, 92, 0.18);
+  border-radius: 12px;
+  color: var(--gl-ink);
+  font-weight: 700;
+}
+
+.greenline-tracking-flow span:not(:last-child)::after {
+  content: ">";
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  background: var(--gl-leaf);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.greenline-tracking-events {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.greenline-tracking-event {
+  padding: 16px;
+  background: var(--gl-paper);
+  border: 1px solid rgba(47, 125, 92, 0.14);
+  border-radius: 12px;
+}
+
+.greenline-tracking-event span {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  background: #e6f4ee;
+  color: var(--gl-leaf);
+  border-radius: 999px;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+}
+
+.greenline-tracking-event h3 {
+  margin: 0 0 8px;
+  color: var(--gl-ink);
+  font-size: 18px;
+}
+
+.greenline-tracking-event p {
+  margin: 0 0 12px;
+  color: var(--gl-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.greenline-tracking-event small {
+  color: var(--gl-clay);
+  font-weight: 700;
+}
+
 .greenline-portfolio-grid {
   max-width: 1080px;
   margin: 42px auto;
@@ -568,8 +672,17 @@
 
   .case-study-before-after,
   .case-study-map,
-  .case-study-proof {
+  .case-study-proof,
+  .greenline-tracking-flow,
+  .greenline-tracking-events {
     grid-template-columns: 1fr;
+  }
+
+  .greenline-tracking-flow span:not(:last-child)::after {
+    right: 50%;
+    top: auto;
+    bottom: -16px;
+    transform: translateX(50%) rotate(90deg);
   }
 
   .case-study-map div:nth-last-child(2) {

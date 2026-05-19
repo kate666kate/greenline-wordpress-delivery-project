@@ -255,10 +255,45 @@ WordPress and analytics concepts demonstrated:
 - GA4 funnel and intent reporting
 - Support for shortcode CTAs and WordPress block buttons
 
+### 13. Tracking summary display
+
+Added:
+
+```text
+[greenline_tracking_summary]
+```
+
+This outputs a visual summary block for a case study or portfolio page. It explains the tracking funnel in plain language:
+
+- Visitor lands on the site
+- Visitor clicks a CTA
+- Visitor submits a form, calls, or emails
+- GA4 receives the enquiry event through GTM
+
+The block lists the main events used in the project:
+
+```text
+page_view
+cta_click
+generate_lead
+phone_click
+email_click
+```
+
+This makes the analytics work easier to demonstrate in an interview because the page now shows both the business reason and the technical tracking events.
+
+WordPress and analytics concepts demonstrated:
+
+- Shortcode-based reporting component
+- Case study presentation layer
+- GA4 event naming
+- GTM data layer workflow explanation
+- Turning technical tracking work into client-friendly language
+
 ## Interview Talking Point
 
 ```text
-I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, email click tracking, and CTA click tracking. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
+I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, email click tracking, CTA click tracking, and a tracking summary block for the case study page. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, analytics QA, and client-friendly reporting.
 ```
 
 ## Test Checklist
@@ -276,3 +311,4 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Click the phone link in the `[greenline_hours]` block and confirm the `phone_click` event appears in GTM Preview.
 - Click the email link in the `[greenline_hours]` block and confirm the `email_click` event appears in GTM Preview.
 - Click the `[greenline_cta]` button and confirm the `cta_click` event appears in GTM Preview.
+- Add `[greenline_tracking_summary]` to the case study page and confirm the tracking funnel summary displays clearly.

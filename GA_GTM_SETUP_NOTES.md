@@ -94,7 +94,6 @@ For a small business WordPress site:
 - Phone link click
 - Email link click
 - Portfolio project view
-- File download, if relevant
 
 For WooCommerce:
 
@@ -221,6 +220,24 @@ In GTM (Google Tag Manager), create:
 4. GA4 event name: `cta_click`.
 5. Trigger: `CE - cta_click`.
 
+## Tracking Summary Block
+
+The case study page can show the tracking setup with this shortcode:
+
+```text
+[greenline_tracking_summary]
+```
+
+This block is not another analytics tag. It is a presentation block that explains what the project tracks:
+
+- `page_view`: visitor loads a page.
+- `cta_click`: visitor clicks a key button.
+- `generate_lead`: contact form sends successfully.
+- `phone_click`: visitor clicks a phone link.
+- `email_click`: visitor clicks an email link.
+
+Use this on a portfolio or case study page when you need to explain the tracking work to a client, interviewer, or non-technical stakeholder.
+
 ## Testing Checklist
 
 Before launch:
@@ -232,6 +249,7 @@ Before launch:
 - Phone click event fires when a `tel:` link is clicked.
 - Email click event fires when a `mailto:` link is clicked.
 - CTA click tracking works.
+- Tracking summary block displays on the case study page.
 - Phone and email click events work if configured.
 - WooCommerce events are tested if shop functionality is active.
 - Internal/test traffic is considered.
