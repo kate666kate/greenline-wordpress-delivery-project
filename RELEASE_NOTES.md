@@ -197,10 +197,37 @@ WordPress and analytics concepts demonstrated:
 - GTM data layer events
 - GA4 contact-intent tracking
 
+### 11. Email click tracking
+
+Added `mailto:` link tracking to the same frontend tracking script:
+
+```text
+greenline-site-style/tracking-events.js
+```
+
+When a visitor clicks an email link, the script pushes this event into the GTM data layer:
+
+```javascript
+{
+  event: "email_click",
+  event_source: "email_link",
+  link_url: "mailto:..."
+}
+```
+
+This helps track users who prefer to enquire by email rather than submitting a form or clicking a phone number.
+
+WordPress and analytics concepts demonstrated:
+
+- Email link click tracking
+- Reusable JavaScript event tracking pattern
+- GTM custom event triggers
+- GA4 enquiry-intent reporting
+
 ## Interview Talking Point
 
 ```text
-I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, and phone click tracking. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
+I upgraded the original styling plugin into a small WordPress site toolkit. I added an admin settings page, reusable shortcodes, a portfolio custom post type, a custom REST API endpoint, WooCommerce awareness, GTM support, lead tracking for successful contact form submissions, phone click tracking, and email click tracking. This helped me practise WordPress plugin structure, the Settings API, sanitisation and escaping, shortcodes, custom post types, REST API routes, frontend event tracking, and analytics QA.
 ```
 
 ## Test Checklist
@@ -216,3 +243,4 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Add a GTM Container ID in `Settings > Greenline Toolkit` and confirm the GTM script appears in page source.
 - Submit a Contact Form 7 form and confirm the `generate_lead` event appears in GTM Preview.
 - Click the phone link in the `[greenline_hours]` block and confirm the `phone_click` event appears in GTM Preview.
+- Click the email link in the `[greenline_hours]` block and confirm the `email_click` event appears in GTM Preview.
