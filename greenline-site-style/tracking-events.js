@@ -20,15 +20,22 @@
 
   document.addEventListener("click", function (event) {
     var phoneLink = event.target.closest('a[href^="tel:"]');
+    var emailLink = event.target.closest('a[href^="mailto:"]');
 
-    if (!phoneLink) {
-      return;
+    if (phoneLink) {
+      pushEvent({
+        event: "phone_click",
+        event_source: "phone_link",
+        link_url: phoneLink.getAttribute("href")
+      });
     }
 
-    pushEvent({
-      event: "phone_click",
-      event_source: "phone_link",
-      link_url: phoneLink.getAttribute("href")
-    });
+    if (emailLink) {
+      pushEvent({
+        event: "email_click",
+        event_source: "email_link",
+        link_url: emailLink.getAttribute("href")
+      });
+    }
   });
 })();
