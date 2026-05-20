@@ -407,3 +407,32 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Add `[greenline_handover_checklist]` to the case study page and confirm the handover board displays clearly.
 - Add `[greenline_site_audit_summary]` to the case study page and confirm the audit summary displays clearly.
 - Add `[greenline_woocommerce_readiness]` to the case study page and confirm the ecommerce readiness checklist displays clearly.
+
+## v1.4.0 - Interview-ready presentation package
+
+Added:
+
+```text
+INTERVIEW_PROJECT_TALKING_POINTS.md
+PROJECT_DEMO_FLOW.md
+```
+
+This release turns the technical project into an interview-ready portfolio package.
+
+`INTERVIEW_PROJECT_TALKING_POINTS.md` includes:
+
+- A short project summary
+- A two-minute English interview pitch
+- Chinese explanation notes
+- Technical talking points for WordPress, REST API, GA4/GTM, and WooCommerce readiness
+- Common interviewer questions and suggested answers
+
+`PROJECT_DEMO_FLOW.md` includes:
+
+- The recommended demo order
+- Which local URLs to open
+- What to say at each step
+- How to explain the custom plugin, REST API, tracking, email testing, and handover sections
+- A one-minute short version for quick interviews
+
+The goal is to make the project easier to explain as a complete website delivery workflow, not just a collection of files or WordPress pages.

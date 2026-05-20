@@ -60,6 +60,8 @@ http://localhost:8090/case-study/
 - `greenline-site-style/`: custom WordPress toolkit plugin and styling used by the project.
 - `wordpress-website-developer-portfolio/`: interview notes, workflow checklists, demo script, and skill files.
 - `wordpress-website-developer-portfolio/walkthrough-frames/`: visual project walkthrough frames.
+- `INTERVIEW_PROJECT_TALKING_POINTS.md`: bilingual interview script, project positioning, and technical Q&A.
+- `PROJECT_DEMO_FLOW.md`: step-by-step demo path for showing the project in an interview.
 - `CLIENT_TRAINING_GUIDE.md`: client-facing guide for updating toolkit settings, portfolio projects, shortcodes, maintenance checks, and handover training.
 - `GA_GTM_SETUP_NOTES.md`: GA4 and Google Tag Manager setup notes for tracking, form events, WooCommerce awareness, testing, and privacy.
 - `ga-gtm-tracking-demo.html`: local visual demo showing how website actions can push events to a simulated GTM `dataLayer`.
@@ -67,6 +69,15 @@ http://localhost:8090/case-study/
 ## Interview Positioning
 
 This project was built as a local training and portfolio environment. It is not a live client website. Its purpose is to demonstrate how WordPress page building connects with the surrounding operational work: hosting, DNS, SSL, email deliverability, SEO, QA, migration, and troubleshooting.
+
+For interview preparation, start with:
+
+```text
+INTERVIEW_PROJECT_TALKING_POINTS.md
+PROJECT_DEMO_FLOW.md
+```
+
+These documents explain how to present the project clearly as a full website delivery workflow: build, hosting, forms, email, analytics, QA, documentation, and client handover.
 
 ## Security Note
 
