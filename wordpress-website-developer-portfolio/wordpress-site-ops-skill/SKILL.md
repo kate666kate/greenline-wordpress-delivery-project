@@ -55,15 +55,15 @@ Example / 示例：
 ```text
 网站类型 / Website type: WordPress
 任务类型 / Task type: 新建 / New build
-客户/网站名称 / Client or website name: Bright Dental Studio
-域名 / Domain: brightdental.com.au
+客户/网站名称 / Client or website name: Example Dental Studio
+域名 / Domain: example-dental.com.au
 Hosting / Hosting: cPanel
 DNS 在哪里管理 / DNS location: cPanel Zone Editor
 邮箱系统 / Email system: cPanel Email
 页面 / Pages: Home, About, Services, Contact
 目标 / Goal: 展示服务 + 收 enquiry / Showcase services and receive enquiries
 素材 / Assets: logo, 5 photos, navy blue + white
-Form 收件邮箱 / Form recipient email: reception@brightdental.com.au
+Form 收件邮箱 / Form recipient email: reception@example-dental.com.au
 Deadline / Deadline: next Friday
 ```
 
