@@ -16,6 +16,32 @@ The project includes:
 - A local Docker environment with WordPress, MySQL, phpMyAdmin, Mailpit, and an Nginx DNS cutover simulator
 - Documentation for setup, troubleshooting, client training, analytics, and interview presentation
 
+## Visual Walkthrough
+
+![Greenline Studio WordPress walkthrough](wordpress-website-developer-portfolio/greenline-wordpress-walkthrough.gif)
+
+### Website Build And Structure
+
+![Greenline Studio WordPress build](wordpress-website-developer-portfolio/walkthrough-frames/01-greenline-studio-wordpress-build.png)
+
+![Website structure](wordpress-website-developer-portfolio/walkthrough-frames/02-website-structure.png)
+
+### Forms, Migration, And DNS
+
+![Contact form and SMTP testing](wordpress-website-developer-portfolio/walkthrough-frames/03-contact-form-and-smtp.png)
+
+![Migration practice](wordpress-website-developer-portfolio/walkthrough-frames/04-migration-practice.png)
+
+![DNS cutover simulation](wordpress-website-developer-portfolio/walkthrough-frames/05-dns-cutover-simulation.png)
+
+### QA And Handover Thinking
+
+![SEO checks](wordpress-website-developer-portfolio/walkthrough-frames/07-seo-checks.png)
+
+![Backup and troubleshooting](wordpress-website-developer-portfolio/walkthrough-frames/09-backup-and-troubleshooting.png)
+
+![Project outcome](wordpress-website-developer-portfolio/walkthrough-frames/10-project-outcome.png)
+
 ## What I Did
 
 - Built and maintained a WordPress demo website for a small business-style project.
