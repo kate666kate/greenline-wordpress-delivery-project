@@ -4,6 +4,10 @@ A local WordPress portfolio project demonstrating practical website delivery ski
 
 This project was built to show more than page editing. It demonstrates how a WordPress website connects with hosting, migration, DNS, SSL, email, forms, SEO, analytics, QA, troubleshooting, documentation, and client handover.
 
+## Highlights
+
+Custom WordPress plugin | REST API endpoint | Docker local environment | DNS cutover simulation | Email testing | GA4/GTM tracking concepts | WooCommerce readiness | Client handover workflow
+
 ## Project Overview
 
 Greenline Studio is a local demo website created as a realistic WordPress delivery project. It simulates the kind of work involved in building, testing, maintaining, and handing over a small business website.
@@ -16,32 +20,6 @@ The project includes:
 - A local Docker environment with WordPress, MySQL, phpMyAdmin, Mailpit, and an Nginx DNS cutover simulator
 - Documentation for setup, troubleshooting, client training, analytics, and handover
 
-## Visual Walkthrough
-
-![Greenline Studio WordPress walkthrough](wordpress-website-developer-portfolio/greenline-wordpress-walkthrough.gif)
-
-### Website Build And Structure
-
-![Greenline Studio WordPress build](wordpress-website-developer-portfolio/walkthrough-frames/01-greenline-studio-wordpress-build.png)
-
-![Website structure](wordpress-website-developer-portfolio/walkthrough-frames/02-website-structure.png)
-
-### Forms, Migration, And DNS
-
-![Contact form and SMTP testing](wordpress-website-developer-portfolio/walkthrough-frames/03-contact-form-and-smtp.png)
-
-![Migration practice](wordpress-website-developer-portfolio/walkthrough-frames/04-migration-practice.png)
-
-![DNS cutover simulation](wordpress-website-developer-portfolio/walkthrough-frames/05-dns-cutover-simulation.png)
-
-### QA And Handover Thinking
-
-![SEO checks](wordpress-website-developer-portfolio/walkthrough-frames/07-seo-checks.png)
-
-![Backup and troubleshooting](wordpress-website-developer-portfolio/walkthrough-frames/09-backup-and-troubleshooting.png)
-
-![Project outcome](wordpress-website-developer-portfolio/walkthrough-frames/10-project-outcome.png)
-
 ## What I Did
 
 - Built and maintained a WordPress demo website for a small business-style project.
@@ -51,7 +29,7 @@ The project includes:
 - Reviewed cPanel-style hosting concepts including DNS, SSL, email, databases, phpMyAdmin, and upload limits.
 - Added SEO, image alt text, performance, backup, and troubleshooting notes.
 - Built a custom WordPress plugin with admin settings, shortcodes, a portfolio custom post type, REST API output, frontend JavaScript rendering, Google Tag Manager support, enquiry tracking, website audit sections, WooCommerce readiness, and client handover components.
-- Created client-facing and interview-ready documentation to explain the project clearly.
+- Created client-facing documentation to explain setup, maintenance, analytics, and handover clearly.
 
 ## Technologies Used
 
@@ -98,6 +76,32 @@ Step-by-step improvements are documented in:
 ```text
 RELEASE_NOTES.md
 ```
+
+## Visual Walkthrough
+
+![Greenline Studio WordPress walkthrough](wordpress-website-developer-portfolio/greenline-wordpress-walkthrough.gif)
+
+### Website Build And Structure
+
+![Greenline Studio WordPress build](wordpress-website-developer-portfolio/walkthrough-frames/01-greenline-studio-wordpress-build.png)
+
+![Website structure](wordpress-website-developer-portfolio/walkthrough-frames/02-website-structure.png)
+
+### Forms, Migration, And DNS
+
+![Contact form and SMTP testing](wordpress-website-developer-portfolio/walkthrough-frames/03-contact-form-and-smtp.png)
+
+![Migration practice](wordpress-website-developer-portfolio/walkthrough-frames/04-migration-practice.png)
+
+![DNS cutover simulation](wordpress-website-developer-portfolio/walkthrough-frames/05-dns-cutover-simulation.png)
+
+### QA And Handover Thinking
+
+![SEO checks](wordpress-website-developer-portfolio/walkthrough-frames/07-seo-checks.png)
+
+![Backup and troubleshooting](wordpress-website-developer-portfolio/walkthrough-frames/09-backup-and-troubleshooting.png)
+
+![Project outcome](wordpress-website-developer-portfolio/walkthrough-frames/10-project-outcome.png)
 
 ## Local Demo URLs
 
