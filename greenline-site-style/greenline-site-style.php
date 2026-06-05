@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Greenline Site Toolkit
  * Description: Practice toolkit for the Greenline Studio WordPress build: styling, shortcodes, portfolio content, REST data, WooCommerce awareness, and lead tracking.
- * Version: 1.3.3
+ * Version: 1.3.4
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-define('GREENLINE_SITE_TOOLKIT_VERSION', '1.3.3');
+define('GREENLINE_SITE_TOOLKIT_VERSION', '1.3.4');
 define('GREENLINE_SITE_TOOLKIT_OPTION', 'greenline_site_toolkit_options');
 
 add_action('wp_enqueue_scripts', function () {
@@ -328,6 +328,55 @@ add_shortcode('greenline_tracking_summary', function () {
                     <h3><?php echo esc_html($event['label']); ?></h3>
                     <p><?php echo esc_html($event['meaning']); ?></p>
                     <small><?php echo esc_html($event['source']); ?></small>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php
+    return ob_get_clean();
+});
+
+add_shortcode('greenline_online_comms_focus', function () {
+    $focus_items = [
+        [
+            'title' => 'CMS content structure',
+            'summary' => 'Pages, navigation, contact information, and service-style content are organised so users can find the right pathway quickly.',
+        ],
+        [
+            'title' => 'Website QA and governance',
+            'summary' => 'Publishing checks cover content accuracy, links, forms, mobile layout, SEO basics, and maintainable handover notes.',
+        ],
+        [
+            'title' => 'Forms and service pathways',
+            'summary' => 'The contact form pathway is tested end to end, including the submitted enquiry and notification email flow.',
+        ],
+        [
+            'title' => 'Analytics and reporting',
+            'summary' => 'GA4 and GTM concepts are used to explain how page views, CTA clicks, form submissions, phone clicks, and email clicks can be evaluated.',
+        ],
+        [
+            'title' => 'Contributor training',
+            'summary' => 'Documentation explains what non-technical contributors can safely update and which changes should be escalated.',
+        ],
+    ];
+
+    ob_start();
+    ?>
+    <section class="greenline-online-comms-focus" aria-label="Online communications project focus">
+        <div class="greenline-online-comms-focus__header">
+            <p class="greenline-toolkit-eyebrow">Online Communications Focus</p>
+            <h2>CMS, QA, forms, reporting, and contributor support</h2>
+            <p>
+                This view reframes the WordPress project around content operations and digital service delivery.
+                The focus is on how the website is structured, tested, measured, and handed over for safe ongoing updates.
+            </p>
+        </div>
+
+        <div class="greenline-online-comms-focus__grid">
+            <?php foreach ($focus_items as $item) : ?>
+                <article class="greenline-online-comms-card">
+                    <h3><?php echo esc_html($item['title']); ?></h3>
+                    <p><?php echo esc_html($item['summary']); ?></p>
                 </article>
             <?php endforeach; ?>
         </div>
