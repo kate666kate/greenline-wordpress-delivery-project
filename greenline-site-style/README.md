@@ -1,6 +1,6 @@
 # Greenline Site Toolkit
 
-Version: `1.3.3`
+Version: `1.3.4`
 
 Custom WordPress practice plugin for the Greenline Studio portfolio project.
 
@@ -77,17 +77,22 @@ Custom WordPress practice plugin for the Greenline Studio portfolio project.
    - Displays a handover board for client training, launch checks, maintenance rhythm, and support boundaries.
    - Helps explain how a finished WordPress build becomes a maintainable client project.
 
-15. Website audit summary shortcode
+15. Online communications focus shortcode
+   - Usage: `[greenline_online_comms_focus]`
+   - Reframes the project around CMS content structure, website QA, forms, analytics, and contributor support.
+   - Useful for communications, CMS, and digital channels roles where the focus is content operations rather than deep development.
+
+16. Website audit summary shortcode
    - Usage: `[greenline_site_audit_summary]`
    - Displays a launch-readiness summary for performance, security, SEO, forms, and recovery.
    - Helps present QA and maintenance thinking in a client-friendly way.
 
-16. WooCommerce readiness shortcode
+17. WooCommerce readiness shortcode
    - Usage: `[greenline_woocommerce_readiness]`
    - Displays ecommerce launch checks for products, checkout, testing, and operations.
    - Helps demonstrate WooCommerce readiness beyond simply checking whether the plugin is active.
 
-## Interview Talking Point
+## Project Talking Point
 
 This plugin demonstrates practical WordPress development concepts: settings API, sanitisation/escaping, shortcodes, custom post types, REST API routes, asset enqueueing, JavaScript API rendering, Google Tag Manager support, lead-event tracking, phone-click tracking, email-click tracking, CTA tracking, a client-friendly tracking summary, a handover checklist, a website audit summary, WooCommerce readiness, and plugin dependency awareness.
 
