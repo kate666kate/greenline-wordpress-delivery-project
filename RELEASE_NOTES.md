@@ -404,6 +404,7 @@ I upgraded the original styling plugin into a small WordPress site toolkit. I ad
 - Click the email link in the `[greenline_hours]` block and confirm the `email_click` event appears in GTM Preview.
 - Click the `[greenline_cta]` button and confirm the `cta_click` event appears in GTM Preview.
 - Add `[greenline_tracking_summary]` to the case study page and confirm the tracking funnel summary displays clearly.
+- Add `[greenline_online_comms_focus]` to the case study page and confirm the online communications focus section displays clearly.
 - Add `[greenline_handover_checklist]` to the case study page and confirm the handover board displays clearly.
 - Add `[greenline_site_audit_summary]` to the case study page and confirm the audit summary displays clearly.
 - Add `[greenline_woocommerce_readiness]` to the case study page and confirm the ecommerce readiness checklist displays clearly.
@@ -436,3 +437,24 @@ This release turns the technical project into an interview-ready portfolio packa
 - A one-minute short version for quick interviews
 
 The goal is to make the project easier to explain as a complete website delivery workflow, not just a collection of files or WordPress pages.
+
+## v1.3.4 - Online communications focus section
+
+Added:
+
+```text
+[greenline_online_comms_focus]
+MAROONDAH_ONLINE_COMMUNICATIONS_DEMO.md
+```
+
+This update reframes part of the project for online communications, CMS, and digital channels roles.
+
+The new shortcode displays a case-study section focused on:
+
+- CMS content structure
+- Website QA and governance
+- Forms and service pathway testing
+- Analytics and reporting
+- Contributor training
+
+The new Maroondah demo script explains how to present the same WordPress project without over-emphasising Docker, custom APIs, or plugin architecture. The recommended story focuses on content publishing, website quality, online forms, GA4/GTM reporting, and supporting CMS contributors.
